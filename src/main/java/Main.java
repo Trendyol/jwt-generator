@@ -5,16 +5,7 @@ import java.security.Key;
 
 public class Main {
     public static void main(String[] args) {
-        String secret = "testSecrettestSecrettestSecrettestSecrettestSecret";
-        Key key = Keys.hmacShaKeyFor(secret.getBytes());
-
-        String jwt = Jwts.builder()
-                .setSubject("testUserName@testEmail.com")
-                .claim("userId", "12345678")
-                .claim("email", "testUserName@testEmail.com")
-                .signWith(key)
-                .compact();
-
+        String jwt = JWTGenerater.getJWT("testSecrettestSecrettestSecrettestSecrettestSecret", "testUserName@testEmail.com", "12345678", "testUserName@testEmail.com");
         System.out.println(jwt);
     }
 }
