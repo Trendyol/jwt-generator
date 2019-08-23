@@ -3,7 +3,7 @@ import io.jsonwebtoken.security.Keys;
 
 import java.security.Key;
 
-public class JWTGenerater {
+public class JWTGenerator {
     public static String getJWT(String secret, String subject, String userId, String userEmail) {
         Key key = Keys.hmacShaKeyFor(secret.getBytes());
 
