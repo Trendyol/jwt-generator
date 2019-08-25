@@ -3,19 +3,13 @@ package com.trendyol.jwt.example;
 import com.trendyol.jwt.generator.JWTGenerator;
 import org.apache.log4j.Logger;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class GenerateJWTExampleUsingObject {
     static final Logger logger = Logger.getLogger(GenerateJWTExampleUsingObject.class);
 
     public static void main(String[] args) {
-        Map<String, Object> header = new HashMap<>();
-        header.put("typ", "JWT");
-
         User userForBody = new User("John Doe", "johndoe@examplemail.com", 42);
 
-        String jwt = JWTGenerator.getJWT("525m3A6LOmrkgvHF6qxFOxJESI4lfZQsQrbu4YXUAF5", header, userForBody);
+        String jwt = JWTGenerator.getJWT("525m3A6LOmrkgvHF6qxFOxJESI4lfZQsQrbu4YXUAF5", null, userForBody);
         logger.debug(jwt);
     }
 }

@@ -10,11 +10,8 @@ public class GenerateJWTExampleUsingMap {
     static final Logger logger = Logger.getLogger(GenerateJWTExampleUsingMap.class);
 
     public static void main(String[] args) {
-        Map<String, Object> header = new HashMap<>();
-        header.put("typ", "JWT");
-
         Map<String, Object> body = new HashMap<>();
-        body.put("name","John Doe");
+        body.put("name", "John Doe");
         body.put("email", "johndoe@examplemail.com");
         body.put("age", 42);
 
